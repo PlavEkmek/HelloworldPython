@@ -1,10 +1,9 @@
-FROM ubuntu:18.04
-RUN apt update 
-RUN apt-get update -y
-RUN apt install software-properties-common -y
-RUN add-apt-repository ppa:deadsnakes/ppa -y
-RUN apt install python3.8 -y
-RUN apt-get install git -y
+FROM alpine:latest
+WORKDIR /etc
+RUN apk update && apk upgrade && \
+    apk add --no-cache bash git openssh \
+    apk add --no-cache python3 py3-pip
+WORKDIR /
 RUN git clone https://github.com/PlavEkmek/HelloworldPython.git
 WORKDIR /HelloworldPython
 CMD ["python3","hellofromtheotherside.py"]
