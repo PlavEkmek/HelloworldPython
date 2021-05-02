@@ -1,3 +1,2 @@
-print("I am not a tiger!")
 while(True):
-    continue
+    print('I am Not a Tiger')
